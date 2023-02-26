@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class registerFormTest {
+public class RegisterFormTest {
 
    @BeforeAll
    static void beforeAll(){
