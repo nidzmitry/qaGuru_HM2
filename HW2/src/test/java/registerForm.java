@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -13,7 +14,7 @@ public class registerForm {
    static void beforeAll(){
       Configuration.browserSize = "1920x1080";
       Configuration.baseUrl = "https://demoqa.com";
-   };
+   }
     @Test
     void firstTest(){ open("/automation-practice-form");
        executeJavaScript("$('#fixedban').remove()");
@@ -38,7 +39,6 @@ public class registerForm {
        $(By.cssSelector("label[for='hobbies-checkbox-3']")).click();
 
        $("#uploadPicture").uploadFromClasspath("Test.png");
-
        $("#currentAddress").setValue("Lenina street");
 
        $("#state").click();
@@ -47,4 +47,19 @@ public class registerForm {
        $("#react-select-4-option-0").click();
        $("#submit").click();
        sleep(5000);
+
+       $(".modal-body").shouldHave(text("Test Testovich"));
+     ///  $("#modal-body").shouldHave(text("Testovich"));
+       $(".modal-body").shouldHave(text("User@name.ru"));
+       $(".modal-body").shouldHave(text("Male"));
+       $(".modal-body").shouldHave(text("0123456789"));
+       $(".modal-body").shouldHave(text("March"));
+       $(".modal-body").shouldHave(text("1999"));
+       $(".modal-body").shouldHave(text("11"));
+       $(".modal-body").shouldHave(text("Maths"));
+       $(".modal-body").shouldHave(text("Sports, Reading, Music"));
+       $(".modal-body").shouldHave(text("March"));
+       $(".modal-body").shouldHave(text("Test.png"));
+       $(".modal-body").shouldHave(text("Lenina street"));
+       $(".modal-body").shouldHave(text("Haryana Karnal"));
 } }
