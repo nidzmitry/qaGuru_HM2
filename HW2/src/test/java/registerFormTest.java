@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class registerForm {
+public class registerFormTest {
 
    @BeforeAll
    static void beforeAll(){
@@ -49,7 +49,6 @@ public class registerForm {
        sleep(5000);
 
        $(".modal-body").shouldHave(text("Test Testovich"));
-     ///  $("#modal-body").shouldHave(text("Testovich"));
        $(".modal-body").shouldHave(text("User@name.ru"));
        $(".modal-body").shouldHave(text("Male"));
        $(".modal-body").shouldHave(text("0123456789"));
